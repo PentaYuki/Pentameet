@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "Interview Assistant",
+  "version": "2.0.0",
+  "description": "Real-time interview helper: live transcript + AI-powered answer suggestions.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage",
+    "commands",
+    "alarms"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:5005/*",
+    "http://localhost:5005/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "commands": {
+    "get-suggestion": {
+      "suggested_key": {
+        "default": "Alt+Shift+A",
+        "mac": "MacCtrl+Shift+A"
+      },
+      "description": "Get AI suggestion"
+    },
+    "clear-all": {
+      "suggested_key": {
+        "default": "Alt+Shift+C",
+        "mac": "MacCtrl+Shift+C"
+      },
+      "description": "Clear all"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' http://127.0.0.1:5005 ws://127.0.0.1:5005 http://localhost:5005 ws://localhost:5005"
+  }
+}

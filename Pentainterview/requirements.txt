@@ -1,0 +1,22 @@
+# Interview Assistant – Python Dependencies
+# Cài đặt: pip install -r requirements.txt
+
+google-genai>=0.3.0  # New SDK (replaced deprecated google-generativeai)
+sounddevice>=0.4.6
+faster-whisper>=1.0.0
+flask>=3.0.0
+flask-socketio>=5.4.0
+torch>=2.0.0
+numpy>=1.24.0
+googletrans==4.0.0-rc1  # Dịch miễn phí, không cần API key
+gevent>=23.0.0  # For async support (more stable than eventlet)
+gevent-websocket>=0.10.1
+python-dotenv>=1.0.0
+requests>=2.31.0  # For Ollama API calls (fallback LLM)
+
+
+# Nếu dùng Apple Silicon (M1/M2), Torch tự động dùng MPS.
+# Không cần cài thêm CUDA.
+# 
+# IMPORTANT: Requires Python 3.10+ for compatibility
+# To upgrade: python3 -m pip install --upgrade python-dev
